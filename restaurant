@@ -1,0 +1,1098 @@
+package restaurant;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JList;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
+import javax.swing.JTabbedPane;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JCheckBox;
+import javax.swing.JTextArea;
+import javax.swing.JRadioButton;
+import java.awt.SystemColor;
+
+public class restaurant {
+
+	private JFrame frame;
+	private JTextField txtChickenBiryani;
+	private JTextField txtPrawnsBiryani;
+	private JTextField txtFishFriedBiryani;
+	private JTextField txtMushroomBiryani;
+	private JTextField txtVegFriedBiryani;
+	private JTextField txtEggBiryani;
+	private JTextField txtChickenSpringRolls;
+	private JTextField txtChickenManchurian;
+	private JTextField txtChilliFriedFish;
+	private JTextField txtVegManchurian;
+	private JTextField txtVanillaCheescake;
+	private JTextField txtChocolateCake;
+	private JTextField txtApplePie;
+	private JTextField txtIcecream;
+	private JTextField txtPaneerBiryani;
+	private JLabel lblCostofBiryani;
+	private JTextField txt;
+	private JTextField txtMountainDew;
+	private JTextField txtSevenUp;
+	private JTextField txtWaterBottle;
+	private JTextField textField;
+	
+	
+	double first;
+	double second;
+	double result;
+	double operation;
+	String answer;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					restaurant window = new restaurant();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public restaurant() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(0, 0, 1368, 689);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 191, 255));
+		panel.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel.setBounds(10, 98, 320, 57);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("Biryani Items");
+		lblNewLabel_1_1_1.setBounds(63, 10, 213, 35);
+		lblNewLabel_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 30));
+		panel.add(lblNewLabel_1_1_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 191, 255));
+		panel_1.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_1.setBounds(628, 160, 339, 224);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setLayout(null);
+		panel_1_1.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_1_1.setBackground(new Color(0, 191, 255));
+		panel_1_1.setBounds(0, -65, 339, 57);
+		panel_1.add(panel_1_1);
+		
+		JPanel panel_1_2 = new JPanel();
+		panel_1_2.setLayout(null);
+		panel_1_2.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_1_2.setBackground(new Color(0, 191, 255));
+		panel_1_2.setBounds(0, -65, 339, 57);
+		panel_1.add(panel_1_2);
+		
+		JPanel panel_1_1_1 = new JPanel();
+		panel_1_1_1.setLayout(null);
+		panel_1_1_1.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_1_1_1.setBackground(new Color(0, 191, 255));
+		panel_1_1_1.setBounds(0, -65, 339, 57);
+		panel_1_2.add(panel_1_1_1);
+		
+		JLabel lblNewLabel_1_1_1_1_8_1 = new JLabel("Vanilla cheesecake");
+		lblNewLabel_1_1_1_1_8_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_8_1.setBounds(21, 22, 230, 26);
+		panel_1.add(lblNewLabel_1_1_1_1_8_1);
+		
+		JLabel lblNewLabel_1_1_1_1_8_2 = new JLabel("Chocolate cake");
+		lblNewLabel_1_1_1_1_8_2.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_8_2.setBounds(21, 58, 230, 26);
+		panel_1.add(lblNewLabel_1_1_1_1_8_2);
+		
+		JLabel lblNewLabel_1_1_1_1_8_3 = new JLabel("Apple Pie");
+		lblNewLabel_1_1_1_1_8_3.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_8_3.setBounds(21, 94, 230, 26);
+		panel_1.add(lblNewLabel_1_1_1_1_8_3);
+		
+		JLabel lblNewLabel_1_1_1_1_8_4 = new JLabel("Ice Cream");
+		lblNewLabel_1_1_1_1_8_4.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_8_4.setBounds(21, 130, 230, 26);
+		panel_1.add(lblNewLabel_1_1_1_1_8_4);
+		
+		txtVanillaCheescake = new JTextField();
+		txtVanillaCheescake.setColumns(10);
+		txtVanillaCheescake.setBounds(272, 24, 43, 24);
+		panel_1.add(txtVanillaCheescake);
+		
+		txtChocolateCake = new JTextField();
+		txtChocolateCake.setColumns(10);
+		txtChocolateCake.setBounds(272, 58, 43, 24);
+		panel_1.add(txtChocolateCake);
+		
+		txtApplePie = new JTextField();
+		txtApplePie.setColumns(10);
+		txtApplePie.setBounds(272, 94, 43, 24);
+		panel_1.add(txtApplePie);
+		
+		txtIcecream = new JTextField();
+		txtIcecream.setColumns(10);
+		txtIcecream.setBounds(272, 130, 43, 24);
+		panel_1.add(txtIcecream);
+		
+		JSeparator separator_4 = new JSeparator();
+		separator_4.setBounds(31, 166, 284, 2);
+		panel_1.add(separator_4);
+		
+		JLabel lblNewLabel_1_1_1_1_6_1_2_1 = new JLabel("Total Cost of Desserts");
+		lblNewLabel_1_1_1_1_6_1_2_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_6_1_2_1.setBounds(21, 178, 192, 35);
+		panel_1.add(lblNewLabel_1_1_1_1_6_1_2_1);
+		
+		JLabel lblCostofDesserts = new JLabel("");
+		lblCostofDesserts.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCostofDesserts.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblCostofDesserts.setBorder(new LineBorder(new Color(0,0,0),2));
+		lblCostofDesserts.setBounds(248, 178, 66, 26);
+		panel_1.add(lblCostofDesserts);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(0, 191, 255));
+		panel_2.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_2.setBounds(334, 160, 291, 405);
+		frame.getContentPane().add(panel_2);
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel_1_1_1_1_8 = new JLabel("Chicken Spring Rolls");
+		lblNewLabel_1_1_1_1_8.setBounds(30, 16, 230, 26);
+		lblNewLabel_1_1_1_1_8.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		panel_2.add(lblNewLabel_1_1_1_1_8);
+		
+		JLabel lblNewLabel_1_1_1_1_7 = new JLabel("Chicken Manchurian");
+		lblNewLabel_1_1_1_1_7.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_7.setBounds(30, 52, 230, 35);
+		panel_2.add(lblNewLabel_1_1_1_1_7);
+		
+		JLabel lblNewLabel_1_1_1_1_9 = new JLabel("Chilli Fried Fish");
+		lblNewLabel_1_1_1_1_9.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_9.setBounds(30, 97, 199, 35);
+		panel_2.add(lblNewLabel_1_1_1_1_9);
+		
+		JLabel lblNewLabel_1_1_1_1_10 = new JLabel("Veg Manchurian");
+		lblNewLabel_1_1_1_1_10.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_10.setBounds(30, 134, 199, 35);
+		panel_2.add(lblNewLabel_1_1_1_1_10);
+		
+		
+		txtChickenSpringRolls = new JTextField();
+		txtChickenSpringRolls.setColumns(10);
+		txtChickenSpringRolls.setBounds(238, 16, 43, 24);
+		panel_2.add(txtChickenSpringRolls);
+		
+		txtChickenManchurian = new JTextField();
+		txtChickenManchurian.setColumns(10);
+		txtChickenManchurian.setBounds(238, 52, 43, 24);
+		panel_2.add(txtChickenManchurian);
+		
+		txtChilliFriedFish = new JTextField();
+		txtChilliFriedFish.setColumns(10);
+		txtChilliFriedFish.setBounds(238, 95, 43, 24);
+		panel_2.add(txtChilliFriedFish);
+		
+		txtVegManchurian = new JTextField();
+		txtVegManchurian.setColumns(10);
+		txtVegManchurian.setBounds(239, 134, 43, 24);
+		panel_2.add(txtVegManchurian);
+		
+		JLabel lblNewLabel_1_1_1_1_6_1_1 = new JLabel("Total Cost of Starters & Drinks");
+		lblNewLabel_1_1_1_1_6_1_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel_1_1_1_1_6_1_1.setBounds(10, 360, 219, 35);
+		panel_2.add(lblNewLabel_1_1_1_1_6_1_1);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setBounds(40, 349, 230, 2);
+		panel_2.add(separator_2);
+		
+		JLabel lblCostofStarter = new JLabel("");
+		lblCostofStarter.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCostofStarter.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblCostofStarter.setBorder(new LineBorder(new Color(0,0,0),2));
+		lblCostofStarter.setBounds(224, 360, 57, 26);
+		panel_2.add(lblCostofStarter);
+		
+		JLabel lblNewLabel_1_1_1_1_8_5 = new JLabel("Mountain Dew");
+		lblNewLabel_1_1_1_1_8_5.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_8_5.setBounds(30, 184, 230, 26);
+		panel_2.add(lblNewLabel_1_1_1_1_8_5);
+		
+		txtMountainDew = new JTextField();
+		txtMountainDew.setColumns(10);
+		txtMountainDew.setBounds(238, 184, 43, 24);
+		panel_2.add(txtMountainDew);
+		
+		JLabel lblNewLabel_1_1_1_1_7_1 = new JLabel("Seven Up");
+		lblNewLabel_1_1_1_1_7_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_7_1.setBounds(30, 220, 191, 35);
+		panel_2.add(lblNewLabel_1_1_1_1_7_1);
+		
+		txtSevenUp = new JTextField();
+		txtSevenUp.setColumns(10);
+		txtSevenUp.setBounds(238, 220, 43, 24);
+		panel_2.add(txtSevenUp);
+		
+		JLabel lblNewLabel_1_1_1_1_9_1 = new JLabel("Water Bottle");
+		lblNewLabel_1_1_1_1_9_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_9_1.setBounds(30, 265, 199, 35);
+		panel_2.add(lblNewLabel_1_1_1_1_9_1);
+		
+		txtWaterBottle = new JTextField();
+		txtWaterBottle.setColumns(10);
+		txtWaterBottle.setBounds(238, 263, 43, 24);
+		panel_2.add(txtWaterBottle);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(0, 191, 255));
+		panel_3.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_3.setBounds(628, 386, 339, 179);
+		frame.getContentPane().add(panel_3);
+		panel_3.setLayout(null);
+		
+		JLabel lblNewLabel_1_1_1_1_6_1_2_2 = new JLabel("Cost of Delivery");
+		lblNewLabel_1_1_1_1_6_1_2_2.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_6_1_2_2.setBounds(21, 87, 192, 24);
+		panel_3.add(lblNewLabel_1_1_1_1_6_1_2_2);
+		
+		JLabel lblCostofDelivery = new JLabel("");
+		lblCostofDelivery.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCostofDelivery.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblCostofDelivery.setBorder(new LineBorder(new Color(0,0,0),2));
+		lblCostofDelivery.setBounds(212, 89, 104, 22);
+		panel_3.add(lblCostofDelivery);
+		
+		JLabel lblNewLabel_1_1_1_1_6_1_2_2_1 = new JLabel("Total Price");
+		lblNewLabel_1_1_1_1_6_1_2_2_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_6_1_2_2_1.setBounds(21, 121, 192, 24);
+		panel_3.add(lblNewLabel_1_1_1_1_6_1_2_2_1);
+		
+		JLabel lblTotalPrice = new JLabel("");
+		lblTotalPrice.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblTotalPrice.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblTotalPrice.setBorder(new LineBorder(new Color(0,0,0),2));
+		lblTotalPrice.setBounds(212, 123, 104, 22);
+		panel_3.add(lblTotalPrice);
+		
+		JCheckBox chkDelivery = new JCheckBox("Home Delivery");
+		chkDelivery.setBackground(new Color(0, 191, 255));
+		chkDelivery.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		chkDelivery.setBounds(21, 25, 139, 27);
+		panel_3.add(chkDelivery);
+		
+		JCheckBox chckbxTax = new JCheckBox("Tax");
+		chckbxTax.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		chckbxTax.setBackground(new Color(0, 191, 255));
+		chckbxTax.setBounds(220, 25, 96, 27);
+		panel_3.add(chckbxTax);
+		
+		JLabel lblNewLabel_1_1_1_1_6_1_2_2_2 = new JLabel("Tax");
+		lblNewLabel_1_1_1_1_6_1_2_2_2.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_6_1_2_2_2.setBounds(21, 53, 192, 24);
+		panel_3.add(lblNewLabel_1_1_1_1_6_1_2_2_2);
+		
+		JLabel lblTax = new JLabel("");
+		lblTax.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblTax.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblTax.setBorder(new LineBorder(new Color(0,0,0),2));
+		lblTax.setBounds(212, 55, 104, 22);
+		panel_3.add(lblTax);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(new Color(0, 191, 255));
+		panel_4.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_4.setBounds(969, 98, 373, 467);
+		frame.getContentPane().add(panel_4);
+		panel_4.setLayout(null);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(22, 22, 341, 435);
+		panel_4.add(tabbedPane);
+		
+		JPanel panel_8 = new JPanel();
+		tabbedPane.addTab("Receipt", null, panel_8, null);
+		panel_8.setLayout(null);
+		
+		txt = new JTextField();
+		txt.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		txt.setBounds(10, 10, 316, 388);
+		panel_8.add(txt);
+		txt.setColumns(10);
+		
+		JPanel panel_9 = new JPanel();
+		tabbedPane.addTab("Calculator", null, panel_9, null);
+		panel_9.setLayout(null);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(10, 10, 305, 49);
+		panel_9.add(textField);
+		
+		JButton buttonClear = new JButton("C");
+		buttonClear.setBackground(new Color(0, 191, 255));
+		buttonClear.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonClear.setBounds(91, 77, 72, 49);
+		panel_9.add(buttonClear);
+		buttonClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				textField.setText(null);
+			}
+			});
+		
+		
+		JButton buttonBackspace = new JButton("\uF0E7");
+		buttonBackspace.setBackground(new Color(0, 191, 255));
+		buttonBackspace.setFont(new Font("Wingdings", Font.BOLD, 16));
+		buttonBackspace.setBounds(10, 76, 71, 49);
+		panel_9.add(buttonBackspace);
+		buttonBackspace.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String backSpace=null;
+				if(textField.getText().length()>0)
+				{
+					StringBuilder str =new StringBuilder(textField.getText());
+					str.deleteCharAt(textField.getText().length()-1);
+					backSpace =str.toString();
+					textField.setText(backSpace);
+				}
+		
+			}
+			
+		});
+		JButton buttonDiv = new JButton("/");
+		buttonDiv.setBackground(new Color(0, 191, 255));
+		buttonDiv.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonDiv.setBounds(254, 77, 61, 37);
+		panel_9.add(buttonDiv);
+		buttonDiv.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				first= Double.parseDouble(textField.getText());
+				textField.setText("");
+				operation='/';
+				
+			}
+			
+		});
+		
+		JButton buttonMinus = new JButton("-");
+		buttonMinus.setBackground(new Color(0, 191, 255));
+		buttonMinus.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonMinus.setBounds(254, 128, 61, 40);
+		panel_9.add(buttonMinus);
+		buttonMinus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				first= Double.parseDouble(textField.getText());
+				textField.setText("");
+				operation='-';
+				
+			}
+			
+		});
+		
+		JButton buttonSeven = new JButton("7");
+		buttonSeven.setBackground(new Color(0, 191, 255));
+		buttonSeven.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonSeven.setBounds(10, 140, 61, 49);
+		panel_9.add(buttonSeven);
+		buttonSeven.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonSeven.getText();
+				textField.setText(number);
+				
+			}
+			
+		});
+		
+		JButton buttonEight = new JButton("8");
+		buttonEight.setBackground(new Color(0, 191, 255));
+		buttonEight.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonEight.setBounds(91, 140, 61, 49);
+		panel_9.add(buttonEight);
+		buttonEight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonEight.getText();
+				textField.setText(number);
+				
+			}
+			
+		});
+		
+		JButton buttonNine = new JButton("9");
+		buttonNine.setBackground(new Color(0, 191, 255));
+		buttonNine.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonNine.setBounds(175, 140, 61, 49);
+		panel_9.add(buttonNine);
+		buttonNine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonNine.getText();
+				textField.setText(number);
+				
+			}
+			
+		});
+		
+		JButton buttonMul = new JButton("*");
+		buttonMul.setBackground(new Color(0, 191, 255));
+		buttonMul.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonMul.setBounds(254, 186, 61, 39);
+		panel_9.add(buttonMul);
+		buttonMul.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+						first= Double.parseDouble(textField.getText());
+						textField.setText("");
+						operation='*';
+						
+					}
+					
+				});
+		JButton buttonFour = new JButton("4");
+		buttonFour.setBackground(new Color(0, 191, 255));
+		buttonFour.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonFour.setBounds(10, 199, 61, 48);
+		panel_9.add(buttonFour);
+		buttonFour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonFour.getText();
+				textField.setText(number);
+				
+			}
+			
+		});
+		
+		JButton buttonFive = new JButton("5");
+		buttonFive.setBackground(new Color(0, 191, 255));
+		buttonFive.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonFive.setBounds(91, 199, 61, 48);
+		panel_9.add(buttonFive);
+		buttonFive.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonFive.getText();
+				textField.setText(number);
+				
+			}
+			
+		});
+		
+		JButton buttonSix = new JButton("6");
+		buttonSix.setBackground(new Color(0, 191, 255));
+		buttonSix.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonSix.setBounds(175, 199, 61, 48);
+		panel_9.add(buttonSix);
+		buttonSix.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonSix.getText();
+				textField.setText(number);
+				
+			}
+			
+		});
+		
+		JButton buttonPlus = new JButton("+");
+		buttonPlus.setBackground(new Color(0, 191, 255));
+		buttonPlus.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonPlus.setBounds(254, 243, 61, 37);
+		panel_9.add(buttonPlus);
+		buttonPlus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				first= Double.parseDouble(textField.getText());
+				textField.setText("");
+				operation='+';
+				
+			}
+			
+		});
+		JButton buttonOne = new JButton("1");
+		buttonOne.setBackground(new Color(0, 191, 255));
+		buttonOne.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonOne.setBounds(10, 262, 61, 50);
+		panel_9.add(buttonOne);
+		buttonOne.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonOne.getText();
+				textField.setText(number);
+				
+			}
+			
+		});
+		
+		JButton buttonTwo = new JButton("2");
+		buttonTwo.setBackground(new Color(0, 191, 255));
+		buttonTwo.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonTwo.setBounds(91, 262, 61, 50);
+		panel_9.add(buttonTwo);
+		buttonTwo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonTwo.getText();
+				textField.setText(number);	
+			}
+			
+		});
+		
+		JButton buttonThree = new JButton("3");
+		buttonThree.setBackground(new Color(0, 191, 255));
+		buttonThree.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonThree.setBounds(175, 262, 61, 50);
+		panel_9.add(buttonThree);
+		buttonThree.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonThree.getText();
+				textField.setText(number);	
+			}
+			
+		});
+		
+		
+		JButton buttonEqual = new JButton("=");
+		buttonEqual.setBackground(new Color(0, 191, 255));
+		buttonEqual.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonEqual.setBounds(254, 299, 61, 75);
+		panel_9.add(buttonEqual);
+		
+		JButton buttonZero = new JButton("0");
+		buttonZero.setBackground(new Color(0, 191, 255));
+		buttonZero.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonZero.setBounds(10, 322, 142, 52);
+		panel_9.add(buttonZero);
+		buttonZero.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String answer;
+				double operation;
+				second = Double.parseDouble(textField.getText());
+				if (operation == "+")
+				{
+					result=first+second;
+					answer = String.format("%.2f", result);
+					textField.setText(answer);
+				}
+				else if (operation == "-")
+				{
+					result=first-second;
+					answer = String.format("%.2f", result);
+					textField.setText(answer);
+				}
+				else if (operation == "*")
+				{
+					result=first*second;
+					answer = String.format("%.2f", result);
+					textField.setText(answer);
+				}
+				else if (operation == "/")
+				{
+					result=first/second;
+					answer = String.format("%.2f", result);
+					textField.setText(answer);
+				}
+			}
+			
+		});
+		
+		JButton buttonDot = new JButton(".");
+		buttonDot.setBackground(new Color(0, 191, 255));
+		buttonDot.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		buttonDot.setBounds(175, 322, 61, 52);
+		panel_9.add(buttonDot);
+		buttonDot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonDot.getText();
+				textField.setText(number);
+				
+			}
+			
+		});
+		
+		JButton button00 = new JButton("00");
+		button00.setBackground(new Color(0, 191, 255));
+		button00.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		button00.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number = textField.getText()+button00.getText();
+				textField.setText(number);
+				
+			}
+		});
+		button00.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		button00.setBackground(new Color(0, 191, 255));
+		button00.setBounds(173, 77, 71, 49);
+		panel_9.add(button00);
+		buttonDot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String number = textField.getText()+buttonDot.getText();
+				textField.setText(number);	
+			}
+			
+		});
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(new Color(0, 191, 255));
+		panel_5.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_5.setBounds(10, 568, 1332, 83);
+		frame.getContentPane().add(panel_5);
+		panel_5.setLayout(null);
+		
+		
+		
+		JButton btnTotal = new JButton("Total");
+		btnTotal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double ChickenBiryani = Double.parseDouble(txtChickenBiryani.getText());
+				double iChickenBiryani = 200;
+				double chicBiryani;
+				chicBiryani = (ChickenBiryani *iChickenBiryani);
+				String chBiryani= String.format("%.2f", chicBiryani);
+				lblCostofBiryani.setText(chBiryani);
+				
+				double PrawnsBiryani = Double.parseDouble(txtPrawnsBiryani.getText());
+				double iPrawnsBiryani = 250;
+				double prawnBiryani;
+				prawnBiryani = (PrawnsBiryani *iPrawnsBiryani);
+				String prwnBiryani= String.format("%.2f", prawnBiryani+chicBiryani);
+				lblCostofBiryani.setText(prwnBiryani);
+				
+				double FishFriedBiryani = Double.parseDouble(txtFishFriedBiryani.getText());
+				double iFishFriedBiryani = 230;
+				double fishfBiryani;
+				fishfBiryani = (FishFriedBiryani *iFishFriedBiryani);
+				String ffBiryani= String.format("%.2f", fishfBiryani+prawnBiryani+chicBiryani);
+				lblCostofBiryani.setText(ffBiryani);
+				
+				double MushroomBiryani = Double.parseDouble(txtMushroomBiryani.getText());
+				double iMushroomBiryani = 220;
+				double mushroomBiryani;
+				mushroomBiryani = (MushroomBiryani *iMushroomBiryani);
+				String MBiryani= String.format("%.2f", mushroomBiryani+fishfBiryani+prawnBiryani+chicBiryani);
+				lblCostofBiryani.setText(MBiryani);
+				
+				double VegFriedBiryani = Double.parseDouble(txtVegFriedBiryani.getText());
+				double iVegFriedBiryani = 180;
+				double vegfriedBiryani;
+				vegfriedBiryani = (VegFriedBiryani *iVegFriedBiryani);
+				String vgBiryani= String.format("%.2f", vegfriedBiryani+mushroomBiryani+fishfBiryani+prawnBiryani+chicBiryani);
+				lblCostofBiryani.setText(vgBiryani);
+				
+				double EggBiryani = Double.parseDouble(txtEggBiryani.getText());
+				double iEggBiryani = 150;
+				double eggBiryani;
+				eggBiryani = (EggBiryani *iEggBiryani);
+				String eBiryani= String.format("%.2f", eggBiryani+vegfriedBiryani+mushroomBiryani+fishfBiryani+prawnBiryani+chicBiryani);
+				lblCostofBiryani.setText(eBiryani);
+				
+				double PaneerBiryani = Double.parseDouble(txtPaneerBiryani.getText());
+				double iPaneerBiryani = 200;
+				double paneerBiryani;
+				paneerBiryani = (PaneerBiryani *iPaneerBiryani);
+				String PBiryani= String.format("%.2f",paneerBiryani+eggBiryani+vegfriedBiryani+mushroomBiryani+fishfBiryani+prawnBiryani+chicBiryani);
+				lblCostofBiryani.setText(PBiryani);
+				
+				//===============================================Starters========================================================================================================
+				
+				double  ChickenSpringRolls= Double.parseDouble(txtChickenSpringRolls.getText());
+				double iChickenSpringRolls = 130;
+				double chickenspringrolls;
+				chickenspringrolls = (ChickenSpringRolls *iChickenSpringRolls);
+				String csr= String.format("%.2f", chickenspringrolls);
+				lblCostofStarter.setText(csr);
+				
+				double ChickenManchurian = Double.parseDouble(txtChickenManchurian.getText());
+				double iChickenManchurian = 120;
+				double chickenManchurian;
+				chickenManchurian = (ChickenManchurian *iChickenManchurian);
+				String CM= String.format("%.2f", chickenManchurian+chickenspringrolls);
+				lblCostofStarter.setText(CM);
+				
+				double ChilliFriedFish = Double.parseDouble(txtChilliFriedFish.getText());
+				double iChilliFriedFish = 150;
+				double chilliFriedFish;
+				chilliFriedFish = (ChilliFriedFish *iChilliFriedFish);
+				String cff= String.format("%.2f", chilliFriedFish+chickenManchurian+chickenspringrolls);
+				lblCostofStarter.setText(cff);
+				
+			
+				double VegManchurian = Double.parseDouble(txtVegManchurian.getText());
+				double iVegManchurian = 100;
+				double vegManchurian;
+				vegManchurian = (VegManchurian *iVegManchurian);
+				String vg= String.format("%.2f", vegManchurian+chilliFriedFish+chickenManchurian+chickenspringrolls);
+				lblCostofStarter.setText(vg);
+				
+				double MountainDew = Double.parseDouble(txtMountainDew.getText());
+				double iMountainDew = 50;
+				double mountainDew;
+				mountainDew = (MountainDew *iMountainDew);
+				String MD= String.format("%.2f", mountainDew+vegManchurian+chilliFriedFish+chickenManchurian+chickenspringrolls);
+				lblCostofStarter.setText(MD);
+				
+				double SevenUp = Double.parseDouble(txtSevenUp.getText());
+				double iSevenUp = 30;
+				double sevenUp;
+				sevenUp = (SevenUp *iSevenUp);
+				String SU= String.format("%.2f", sevenUp+mountainDew+vegManchurian+chilliFriedFish+chickenManchurian+chickenspringrolls);
+				lblCostofStarter.setText(SU);
+				
+			
+				double WaterBottle = Double.parseDouble(txtWaterBottle.getText());
+				double iWaterBottle = 100;
+				double waterBottle;
+				waterBottle = (WaterBottle *iWaterBottle);
+				String WB= String.format("%.2f", waterBottle+sevenUp+mountainDew+vegManchurian+chilliFriedFish+chickenManchurian+chickenspringrolls);
+				lblCostofStarter.setText(WB);
+				
+			
+				//============================================================Desserts=======================================================================================
+				
+				double  VanillaCheescake= Double.parseDouble(txtVanillaCheescake.getText());
+				double iVanillaCheescake = 60;
+				double vanillaCheescake;
+				vanillaCheescake = (VanillaCheescake *iVanillaCheescake);
+				String vanilla= String.format("%.2f", vanillaCheescake);
+				lblCostofDesserts.setText(vanilla);
+				
+				double ChocolateCake = Double.parseDouble(txtChocolateCake.getText());
+				double iChocolateCake = 90;
+				double chocolateCake;
+				chocolateCake = (ChocolateCake *iChocolateCake);
+				String CCake= String.format("%.2f", chocolateCake+vanillaCheescake);
+				lblCostofDesserts.setText(CCake);
+				
+				double ApplePie = Double.parseDouble(txtApplePie.getText());
+				double iApplePie = 75;
+				double applePie;
+				applePie = (ApplePie *iApplePie);
+				String Apie= String.format("%.2f", applePie+chocolateCake+vanillaCheescake);
+				lblCostofDesserts.setText(Apie);
+				
+			
+				double Icecream = Double.parseDouble(txtIcecream.getText());
+				double iIcecream = 100;
+				double icecream;
+				icecream = (Icecream *iIcecream);
+				String ice= String.format("%.2f", icecream+applePie+chocolateCake+vanillaCheescake);
+				lblCostofDesserts.setText(ice);
+				
+				
+				
+				//----------------------------------------Home Delivery--------------------------------------------------------------------------------------------------------------
+				
+				double iDelivery =50;
+				if (chkDelivery.isSelected())
+				{
+					String pDelivery = String.format("%.2f", iDelivery);
+					lblCostofDelivery.setText(pDelivery);
+					
+				}
+				else
+				{
+					lblCostofDelivery.setText("0");
+				}
+				
+				//----------------------------------------Tax--------------------------------------------------------------------------------------------------------------
+				
+				double cTotal1 = Double.parseDouble(lblCostofBiryani.getText());
+				double cTotal2 = Double.parseDouble(lblCostofStarter.getText());
+				double cTotal3 = Double.parseDouble(lblCostofDesserts.getText());
+				double AllTotal = (cTotal1 + cTotal2 + cTotal3)/100;
+				
+				 if(chckbxTax.isSelected()) {
+					String iTotal = String.format("%.2f", AllTotal);
+							
+							lblTax.setText(iTotal);
+				}
+				
+		//=========================================Total======================================================================================================
+				 
+				 double cTotal4 = Double.parseDouble(lblTax.getText());
+				 String iTaxTotal = String.format("%.2f",cTotal4);
+					lblTax.setText(iTaxTotal);
+				 
+				double allTotal = (cTotal1 + cTotal2 + cTotal3+cTotal4);
+				String iTotal = String.format("%.2f",allTotal);
+				lblTotalPrice.setText(iTotal);
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			}
+		});
+		btnTotal.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		btnTotal.setBounds(235, 21, 112, 34);
+		panel_5.add(btnTotal);
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblCostofDelivery.setText(null);
+				lblTotalPrice.setText(null);
+				lblTax.setText(null);
+				lblCostofBiryani.setText(null);
+				lblCostofDelivery.setText(null);
+				lblCostofStarter.setText(null);
+				lblCostofDesserts.setText(null);
+				txtChickenBiryani.setText(null);
+				txtPrawnsBiryani.setText(null);
+				txtFishFriedBiryani.setText(null);
+				txtMushroomBiryani.setText(null);
+				txtVegFriedBiryani.setText(null);
+				txtEggBiryani.setText(null);
+				txtPaneerBiryani.setText(null);
+				txtChickenSpringRolls.setText(null);
+				txtChickenManchurian.setText(null);
+				txtChilliFriedFish.setText(null);
+				txtVegManchurian.setText(null);
+				txtVanillaCheescake.setText(null);
+				txtChocolateCake.setText(null);
+				txtApplePie.setText(null);
+				txtIcecream.setText(null);
+				txtMountainDew.setText(null);
+				txtSevenUp.setText(null);
+				txtWaterBottle.setText(null);
+				
+			}
+		});
+		btnReset.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		btnReset.setBounds(677, 21, 112, 34);
+		panel_5.add(btnReset);
+		
+		JButton btnReceipt = new JButton("Receipt");
+		btnReceipt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double B1 = Double.parseDouble(txtChickenBiryani.getText());
+				double B2 = Double.parseDouble(txtPrawnsBiryani.getText());
+				double B3 = Double.parseDouble(txtFishFriedBiryani.getText());
+				double B4 = Double.parseDouble(txtMushroomBiryani.getText());
+				double B5 = Double.parseDouble(txtVegFriedBiryani.getText());
+				double B6 = Double.parseDouble(txtEggBiryani.getText());
+				double B7 = Double.parseDouble(txtPaneerBiryani.getText());
+				
+				
+				double s1 = Double.parseDouble(txtChickenSpringRolls.getText());
+				double s2 = Double.parseDouble(txtChickenManchurian.getText());
+				double s3 = Double.parseDouble(txtChilliFriedFish.getText());
+				double s4 = Double.parseDouble(txtVegManchurian.getText());
+				double s5 = Double.parseDouble(txtMountainDew.getText());
+				double s6 = Double.parseDouble(txtSevenUp.getText());
+				double s7 = Double.parseDouble(txtWaterBottle.getText());
+	
+				
+				
+				double D1 = Double.parseDouble(txtVanillaCheescake.getText());
+				double D2 = Double.parseDouble(txtChocolateCake.getText());
+				double D3 = Double.parseDouble(txtApplePie.getText());
+				double D4 = Double.parseDouble(txtIcecream.getText());
+				
+				JTextArea JtxtReceipt = new JTextArea();
+				
+				
+				jtxtReceipts.append("\t\nRestaurant Management Systems:\n\n"+ "\t\nBiryani Items:\n\n"+"ChickenBiryani:\t\t"+B1+"\nPrawnsBiryani:\t\t"+B2+"\nFishFriedBiryani:\t\t"+B3+
+						"\nMushroomBiryani:\t\t"+B4+"\ntVegFriedBiryani:\t\t"+B5+"\nEggBiryani:\t\t"+B6+"\nPaneerBiryani:\t\t"+B7+
+						"\nChickenSpringRolls:\t\t"+s1+"\nChickenManchurian:\t\t"+s2+"\nChilliFriedFish:\t\t"+s3+"\nVegManchurian:\t\t"+s4+
+						"\nVanillaCheescake:\t\t"+D1+"\nChocolateCake:\t\t"+D2+"\nApplePie:\t\t"+D3+"\nIcecream:\t\t"+D4+"\n\nThanks for using this restaurant management system");
+				
+				
+				
+			}
+		});
+		
+		btnReceipt.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		btnReceipt.setBounds(464, 21, 112, 34);
+		panel_5.add(btnReceipt);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener((ActionListener) new ActionListener() {
+			public void actionPerformed(ActionEvent Arg0) {
+				System.exit(0);
+			}
+		});
+		
+		btnExit.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		btnExit.setBounds(921, 26, 112, 29);
+		panel_5.add(btnExit);
+		
+		JLabel lblNewLabel = new JLabel("Restaurant Management System");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 55));
+		lblNewLabel.setBounds(283, 10, 772, 78);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(new Color(0, 191, 255));
+		panel_6.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_6.setBounds(10, 160, 320, 405);
+		frame.getContentPane().add(panel_6);
+		panel_6.setLayout(null);
+		
+		JLabel ChickenBiryani = new JLabel("Chicken Biryani");
+		ChickenBiryani.setBounds(27, 21, 233, 35);
+		ChickenBiryani.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		panel_6.add(ChickenBiryani);
+		
+		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Prawns Biryani");
+		lblNewLabel_1_1_1_1_1.setBounds(27, 66, 233, 35);
+		lblNewLabel_1_1_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		panel_6.add(lblNewLabel_1_1_1_1_1);
+		
+		JLabel lblNewLabel_1_1_1_1_2 = new JLabel("Fish fried Biryani");
+		lblNewLabel_1_1_1_1_2.setBounds(27, 111, 233, 35);
+		lblNewLabel_1_1_1_1_2.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		panel_6.add(lblNewLabel_1_1_1_1_2);
+		
+		JLabel lblNewLabel_1_1_1_1_3 = new JLabel("Mushroom Biryani");
+		lblNewLabel_1_1_1_1_3.setBounds(25, 154, 235, 35);
+		lblNewLabel_1_1_1_1_3.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		panel_6.add(lblNewLabel_1_1_1_1_3);
+		
+		JLabel lblNewLabel_1_1_1_1_4 = new JLabel("Veg Fried Biryani");
+		lblNewLabel_1_1_1_1_4.setBounds(27, 199, 233, 35);
+		lblNewLabel_1_1_1_1_4.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		panel_6.add(lblNewLabel_1_1_1_1_4);
+		
+		JLabel lblNewLabel_1_1_1_1_5 = new JLabel("Egg Biryani");
+		lblNewLabel_1_1_1_1_5.setBounds(27, 244, 233, 35);
+		lblNewLabel_1_1_1_1_5.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		panel_6.add(lblNewLabel_1_1_1_1_5);
+		
+		JLabel lblNewLabel_1_1_1_1_6 = new JLabel("Paneer Biryani");
+		lblNewLabel_1_1_1_1_6.setBounds(27, 289, 233, 35);
+		lblNewLabel_1_1_1_1_6.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		panel_6.add(lblNewLabel_1_1_1_1_6);
+		
+		txtChickenBiryani = new JTextField();
+		txtChickenBiryani.setBounds(267, 21, 43, 24);
+		panel_6.add(txtChickenBiryani);
+		txtChickenBiryani.setColumns(10);
+		
+		txtPrawnsBiryani = new JTextField();
+		txtPrawnsBiryani.setColumns(10);
+		txtPrawnsBiryani.setBounds(267, 66, 43, 24);
+		panel_6.add(txtPrawnsBiryani);
+		
+		txtFishFriedBiryani = new JTextField();
+		txtFishFriedBiryani.setColumns(10);
+		txtFishFriedBiryani.setBounds(267, 111, 43, 24);
+		panel_6.add(txtFishFriedBiryani);
+		
+		txtMushroomBiryani = new JTextField();
+		txtMushroomBiryani.setColumns(10);
+		txtMushroomBiryani.setBounds(267, 156, 43, 24);
+		panel_6.add(txtMushroomBiryani);
+		
+		txtVegFriedBiryani = new JTextField();
+		txtVegFriedBiryani.setColumns(10);
+		txtVegFriedBiryani.setBounds(267, 199, 43, 24);
+		panel_6.add(txtVegFriedBiryani);
+		
+		txtEggBiryani = new JTextField();
+		txtEggBiryani.setColumns(10);
+		txtEggBiryani.setBounds(267, 244, 43, 24);
+		panel_6.add(txtEggBiryani);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(55, 334, 1, 2);
+		panel_6.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(37, 334, 259, 2);
+		panel_6.add(separator_1);
+		
+		JLabel lblNewLabel_1_1_1_1_6_1 = new JLabel("Total Cost of Biryanis");
+		lblNewLabel_1_1_1_1_6_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel_1_1_1_1_6_1.setBounds(27, 346, 233, 35);
+		panel_6.add(lblNewLabel_1_1_1_1_6_1);
+		
+		txtPaneerBiryani = new JTextField();
+		txtPaneerBiryani.setColumns(10);
+		txtPaneerBiryani.setBounds(267, 289, 43, 24);
+		panel_6.add(txtPaneerBiryani);
+		
+		lblCostofBiryani = new JLabel("");
+		lblCostofBiryani.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblCostofBiryani.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCostofBiryani.setBorder(new LineBorder(new Color(0,0,0),2));
+		lblCostofBiryani.setBounds(226, 346, 84, 35);
+		panel_6.add(lblCostofBiryani);
+		
+		JPanel panel_5_1 = new JPanel();
+		panel_5_1.setBackground(new Color(0, 191, 255));
+		panel_5_1.setBorder(new LineBorder(new Color(106, 90, 205), 10, true));
+		panel_5_1.setBounds(12, 5, 1332, 83);
+		frame.getContentPane().add(panel_5_1);
+		
+		JPanel panel_7 = new JPanel();
+		panel_7.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_7.setBackground(new Color(0, 191, 255));
+		panel_7.setBounds(334, 98, 291, 57);
+		frame.getContentPane().add(panel_7);
+		panel_7.setLayout(null);
+		
+		JLabel lblNewLabel_1_2 = new JLabel("Starters & Drinks");
+		lblNewLabel_1_2.setBounds(55, 10, 221, 35);
+		lblNewLabel_1_2.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		panel_7.add(lblNewLabel_1_2);
+		
+		JLabel lblNewLabel_1 = new JLabel("Starters & Drinks");
+		lblNewLabel_1.setBounds(92, 32, 45, 13);
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 40));
+		panel_7.add(lblNewLabel_1);
+		
+		JPanel panel_1_3 = new JPanel();
+		panel_1_3.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_1_3.setBackground(new Color(0, 191, 255));
+		panel_1_3.setBounds(628, 98, 339, 57);
+		frame.getContentPane().add(panel_1_3);
+		panel_1_3.setLayout(null);
+		
+		JPanel panel_1_1_2 = new JPanel();
+		panel_1_1_2.setBounds(0, -65, 339, 57);
+		panel_1_1_2.setLayout(null);
+		panel_1_1_2.setBorder(new LineBorder(new Color(106, 90, 205), 8, true));
+		panel_1_1_2.setBackground(new Color(0, 191, 255));
+		panel_1_3.add(panel_1_1_2);
+		
+		JLabel lblNewLabel_1_1_1_2 = new JLabel("Desserts Items");
+		lblNewLabel_1_1_1_2.setFont(new Font("Times New Roman", Font.BOLD, 30));
+		lblNewLabel_1_1_1_2.setBounds(59, 10, 213, 35);
+		panel_1_3.add(lblNewLabel_1_1_1_2);
+	}
+}
+
+
+
